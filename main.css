@@ -8,9 +8,9 @@ html { font-family: Barlow; font-size:18px;}
 .menu-vertical a:hover { color: #1c6b22; }
 input, select, option { font-family: Barlow; font-size:18px;}
 .button { background-color:#399231; color:#fff; padding:.5em;width:100%;border:1px solid #399231;}
-a { color: #000;}
-a:hover { color:#245d1f;}
-.default { background-color:#fff; }
+a { color: #245d1f;}
+a:hover { color: #399231;}
+.default { background-color:#ccc; }
 
 * { box-sizing: border-box; margin:0px; }
 [class*="col-"] { float: left; padding: 15px;}

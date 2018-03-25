@@ -22,7 +22,7 @@
 ?>
 
 <div class="col-12">
-  <div class="col-5 center shadow default">
+  <div class="col-5 center">
     <form method="post" action="login.php">
     <input type="hidden" name="login">
 
@@ -38,6 +38,7 @@
     ?>
         <div class="col-12"><a href="createaccount.php">Create Account</a></div>
     <div class="col-4 center" style="float:right;"><input type="submit" class="button" value="Sign in"></div>
+    
   </form>
   </div>
 </div>

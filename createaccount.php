@@ -31,7 +31,7 @@
 ?>
 
 <div class="col-12">
-  <div class="col-6 center shadow default">
+  <div class="col-6 center">
     <form method="post" action="createaccount.php">
     <input type="hidden" name="createaccount">
     <?php
@@ -48,6 +48,7 @@
     <div class="col-12"><input type="text"  class="field" name="email" required ></div>
     <div class="col-12" style="padding-bottom:0;">Password:</div>
     <div class="col-12"><input type="password"  class="field" name="password" required ></div>
+    <div class="col-4"><a href="login.php">Login</a></div>
     <div class="col-4" style="float:right;"><input type="submit" class="button" value="Sign-up"></div>
   </form>
   </div>
