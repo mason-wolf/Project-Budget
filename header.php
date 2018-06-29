@@ -17,13 +17,11 @@
     ?>
   </head>
   <body>
-
-<!--
   <div class="col-12 nav">
-      <div class="nav-header">Project Budget</div>
+      <div class="nav-header">PB</div>
       <button class="nav-toggle" onclick="toggleNav()"><i class="fas fa-bars"></i></button>
       <div class="col-2 nav-dropdown" id="nav" style="display:none;">
         <a href="index.php">Home</a>
       </div>
   </div>
--->
+

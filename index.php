@@ -23,7 +23,7 @@
 
 <div class="col-12">
   <div class="col-5 center">
-    <form method="post" action="login.php">
+    <form method="post" action="index.php">
     <input type="hidden" name="login">
 
     <div class="col-12" style="text-align:center;"><h3>Sign in to Project Budget</h3></div>

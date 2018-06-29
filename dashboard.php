@@ -2,24 +2,23 @@
 
   include 'header.php';
   session_start();
+  
   if(isset($_SESSION['user'])) {
-
       $user = $_SESSION['user'];
-      $accountquery = mysqli_query($connection, "select * from accounts where owner='" . $user . "' and status='primary'");
-      $recordcount = mysqli_num_rows($accountquery);
-      if($recordcount < 1) {
-          header('location: login.php');
-      }
+  }
+
+  else {
+      header('location: index.php');
   }
 
  ?>
 
 <div class="col-12">
-<div class="col-8 center">
-    <div class="col-4" style="text-align:center;"><h2>Remaining Funds</h2></div>
-    <div class="col-2" style="text-align:center;"><h2>$1000</h2></div>
-    <div class="col-12" style="font-size:14px;text-align:center;"><a href="">Add expenses</a> or <a href="createbudget.php">Create a budget</a></div>
-    
+<div class="col-6 center" style="text-align:center;">
+    <div class="col-12">
+    You currently have no account activity.</br></br>
+    <a href="addexpense.php">Add Expenses</a> or <a href="">Create a Budget</a>
+    </div>
 </div>
 </div>
 
