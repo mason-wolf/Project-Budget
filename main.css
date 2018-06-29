@@ -11,7 +11,6 @@ input, select, option { font-family: Barlow; font-size:18px;}
 a { color: #245d1f;}
 a:hover { color: #399231;}
 .default { background-color:#ccc; }
-
 * { box-sizing: border-box; margin:0px; }
 [class*="col-"] { float: left; padding: 15px;}
 .col-1 { width: 8.33%; }
@@ -42,3 +41,23 @@ h3 { font-size:18px; }
 .field { width: 100%; height:45px; border-radius: 5px; border:1px solid #ccc;padding:.5em;}
 .button:hover {cursor: pointer; }
 a {text-decoration: none;}
+
+
+    .currency {
+        position: relative;
+        display: block;
+    }
+
+  .currency:after {
+    color: #37424a !important;
+    content: "$";
+    font-size: 18px !important;
+    font-weight: 400;
+    position: absolute;
+    
+    display: block;
+    height: 100%;
+    top: 0;
+    left: 7px;
+    line-height: 45px;
+    }
