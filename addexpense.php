@@ -16,6 +16,11 @@
       $category = $_POST['category'];
       $date = $_POST['date'];
       $addexpense = mysqli_query($connection, "insert into transactions (owner, date, expense, category) VALUES ('" . $user . "', '" . $date . "','" . $amount . "', '" . $category. "')");
+      $balanceQuery = mysqli_query($connection, "select balance from accounts where owner='" . $user . "' and status ='primary'");
+      $balance = mysqli_fetch_assoc($balanceQuery);
+      $remainingBalance = $balance['balance'] - $amount;
+      $updateBalanceQuery = mysqli_query($connection, "update accounts set balance ='" . $remainingBalance . "' where owner='" . $user . "' and status='primary'");
+   // header('location: dashboard.php');
   }
  ?>
 

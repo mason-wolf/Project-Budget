@@ -66,3 +66,16 @@ a {text-decoration: none;}
     left: 7px;
     line-height: 45px;
     }
+
+    table {
+        font-size:16px;
+        border-collapse: collapse;
+        width: 100%;
+    }
+    
+    td, th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+    }
+    
