@@ -48,7 +48,7 @@ else {
      </div>
        <div class="col-12"><?php if(isset($invalidIncome)) { echo $invalidIncome; } ?></div>
        <div class="col-12">Income:</div>
-       <div class="col-12"><input type="text" class="field" name="income" required placeholder="$"></div>
+       <div class="col-12"><span class="currency"><input  type="text" class="field"  placeholder="0.00" style="padding-left:17px;"></span></div>
        <div class="col-12">Date Recieved:</div>
        <div class="col-12"><input type="date" class="field" name="date" required></div>
      <div class="col-3" style="float:right;"><input type="submit" class="button" value="Next"></div>
