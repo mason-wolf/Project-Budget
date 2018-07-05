@@ -20,7 +20,7 @@
       $balance = mysqli_fetch_assoc($balanceQuery);
       $remainingBalance = $balance['balance'] - $amount;
       $updateBalanceQuery = mysqli_query($connection, "update accounts set balance ='" . $remainingBalance . "' where owner='" . $user . "' and status='primary'");
-   // header('location: dashboard.php');
+     header('location: dashboard.php');
   }
  ?>
 
@@ -39,7 +39,7 @@
                         <input  type="text" class="field"  placeholder="0.00" style="padding-left:17px;" name="amount"></span>
                 </div>
 
-            <div class="col-4">Category:</div>
+            <div class="col-4">Category:</br><sub><a href="#" onclick="document.getElementById('categoryManager').style.display='block'">Manage Categories</a><sub></div>
                 <div class="col-5"> 
                         <select class="field" name="category">
                         <?php
@@ -49,9 +49,9 @@
                             }
                             ?>
                         </select> 
-                        </div>
+                </div>
                 <div class="col-4">Date:</div>
-                <div class="col-6"><input type="date" class="field" name="date" required></div></br></br>
+                <div class="col-6"><input type="date" class="field" name="date" id="date" value="<?php echo $today; ?>"></div></br></br>
                 <div class="col-4" style="float:right;"><input type="submit" value="Add" class="button"></div>
                 </form>
                 <?php include('categorymanager.php'); ?>
