@@ -2,13 +2,7 @@
     include 'header.php';
     include_once 'functions.php';
     session_start();
-    if(isset($_SESSION['user'])) {
-        $user = $_SESSION['user'];
-    }
-    else {
-      header('location: index.php');
-    }
-
+    $user = validate_session();
     if(isset($_POST['addexpense'])) {
       $amount = $_POST['amount'];
       $category = $_POST['category'];

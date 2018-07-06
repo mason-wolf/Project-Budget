@@ -6,9 +6,12 @@
     if (isset($_POST['newBudgetItem'])) {
         $amount = $_POST['amount'];
         $category = $_POST['category'];
-        $newBudgetItem = mysqli_query($connection, "insert into budgets (owner, category, amount, datecreated, datefinished) VALUES ('" . $user . "','" . $category . "','" . $amount . "','" . $today . "', 'n/a')");
+        $newBudgetItem = mysqli_query($connection, "insert into budgets (owner, category, amount) VALUES ('" . $user . "','" . $category . "','" . $amount . "')");
     }
 
+    if (isset($_GET['startDate'])) {
+  //      $startDateQuery = mysqli_query($connection, "insert into budgets (owner, startDate) VALUES ('" . $user . "',"
+    }
 ?>
                         
 <div class="col-12">
@@ -49,7 +52,7 @@
                     </tr> 
                 <?php
                     // retrieve budget categories by group
-                    $budgetItemQuery = mysqli_query($connection, "select * from budgets where owner='" . $user . "' and datefinished='n/a' group by category");
+                    $budgetItemQuery = mysqli_query($connection, "select * from budgets where owner='" . $user . "' group by category");
                     while($budgetItem = mysqli_fetch_assoc($budgetItemQuery)) {
                         echo "<tr><td>" . $budgetItem['category'] . "</td>";
                         $projectedExpenseQuery = mysqli_query($connection, "select sum(amount) as total from budgets where owner='" . $user . "' and category='" . $budgetItem['category'] . "'");
@@ -64,7 +67,13 @@
                 }
                 ?>  </table>
            <?php include('budgetmanager.php'); ?>
-                <div class="col-2" style="float:right;padding:0px;margin-top:10px;"><input type="button" class="button" value="Add Item" onclick="document.getElementById('budgetManager').style.display='block'"></div>
+                <div class="col-4" style="float:right;padding:0px;margin-top:10px;"><input type="button" class="button" value="Add Item" disabled onclick="document.getElementById('budgetManager').style.display='block'"></div>
+                <div class="col-6" style="border:1px solid #ddd;margin-top:25px;">
+                <div class="col-12">Start Date: <input type="date" class="field" style="margin-top:10px;"></div>
+                <div class="col-12">End Date: <input type="date" class="field" style="margin-top:10px;"></div>
+                <div class="col-5" style="padding:0px;margin-top:47px;"><input type="button" value="Save" class="button"></div>
+                <div class="col-6" style="padding:0px;margin-top:47px;float:right;"><input type="button" value="Archive" class="button"></div>
+                </div>
             </div>
         </div>
     </div>

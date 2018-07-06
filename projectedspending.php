@@ -15,7 +15,7 @@ $user = validate_session();
                 <?php } else {
                     echo "<table>";
                     // retrieve budget categories by group
-                    $budgetItemQuery = mysqli_query($connection, "select * from budgets where owner='" . $user . "' and datefinished='n/a' group by category");
+                    $budgetItemQuery = mysqli_query($connection, "select * from budgets where owner='" . $user . "' group by category");
                     while($budgetItem = mysqli_fetch_assoc($budgetItemQuery)) {
                         echo "<tr><td>" . $budgetItem['category'] . "</td>";
                         $projectedExpenseQuery = mysqli_query($connection, "select sum(amount) as total from budgets where owner='" . $user . "' and category='" . $budgetItem['category'] . "'");
