@@ -4,6 +4,10 @@
   if(isset($_SESSION['user'])) {
     include ('header.php');
     $user = $_SESSION['user'];
+    $accountQuery = mysqli_query($connection, "select owner from accounts where owner='" . $user . "'");
+    if (mysqli_num_rows($accountQuery) >= 1) {
+      header('location: dashboard.php');
+    }
     $userquery = mysqli_fetch_assoc(mysqli_query($connection, "select * from users where email='" . $user . "'"));
     $username = $userquery['firstname'];
     $dateCreated = date("F j, Y");
@@ -48,9 +52,9 @@ else {
      </div>
        <div class="col-12"><?php if(isset($invalidIncome)) { echo $invalidIncome; } ?></div>
        <div class="col-12">Income:</div>
-       <div class="col-12"><span class="currency"><input  type="text" class="field"  placeholder="0.00" style="padding-left:17px;"></span></div>
+       <div class="col-12"><span class="currency"><input  type="text" class="field" name="income" placeholder="0.00" style="padding-left:17px;"></span></div>
        <div class="col-12">Date Recieved:</div>
-       <div class="col-12"><input type="date" class="field" name="date" required></div>
+       <div class="col-12"><input type="date" class="field" name="date" required  value="<?php echo $today; ?>"></div>
      <div class="col-3" style="float:right;"><input type="submit" class="button" value="Next"></div>
    </form>
 

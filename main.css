@@ -26,15 +26,15 @@ a:hover { color: #399231;}
 .col-11 { width: 91.66%; }
 .col-12 { width: 100%; }
 @media only screen and (max-width: 768px) { [class*="col-"] { width: 100%;} }
-@media only screen and (max-width: 768px) { [class*="menu-vertical"] { display: none; } }
+@media only screen and (max-width: 768px) { [class*="menu-mobile"] { display: none; } }
 .row::after { content: ""; clear: both; display: block; }
 .center { margin:auto; float:none; }
 .nav { height:50px; }
 .nav-toggle { margin-top:-25px; margin-right:10px; float:right; outline:none; border:none; font-size:20px; }
 .nav-dropdown { padding:0em; text-align: center; right:0px;position:absolute;height:50%; margin-top:px;}
 .nav-dropdown a { display: block; width:100%; padding: 1em;}
-.menu-vertical { padding:1em; text-align: center; }
-.menu-vertical a { display: block; width:100%; padding:1em; }
+.menu-mobile { padding:1em; text-align: center; }
+.menu-mobile a { display: block; width:100%; padding:1em; }
 .shadow { box-shadow: 0 2px 1px 0 rgba(0,0,0,0.2), 0 2px 10px 0 rgba(0,0,0,0.19); overflow: auto;}
 h1, h2, h3, h4, h5 {font-weight: normal;}
 h3 { font-size:18px; }
@@ -66,3 +66,15 @@ a {text-decoration: none;}
     left: 7px;
     line-height: 45px;
     }
+
+table {
+    font-size:16px;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}

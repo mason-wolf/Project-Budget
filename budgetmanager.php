@@ -1,5 +1,7 @@
-
-
+<?php
+    include_once ('functions.php');
+    $user = validate_session();
+?>
 <div id="budgetManager" class="modal">
     <div class="modal-content animate-top">
         <div class="col-12" style="background-color:#fff;padding:30px;">
@@ -11,15 +13,7 @@
                 <input type="hidden" name="newBudgetItem">
                 <div class="col-12"><span class="currency"><input  type="text" class="field"  placeholder="0.00"  style="padding-left:17px;" name="amount"></span></div>
                 <div class="col-12">
-                        <select class="field" name="category">
-                            <?php
-                            include('connection.php');
-                            $categoryQuery = mysqli_query($connection, 'select * from categories order by title');
-                            while ($category = mysqli_fetch_assoc($categoryQuery)) {
-                                echo "<option value='" . $category['title'] . "' >" . $category['title'] . "</option>";
-                            }
-                            ?>
-                        </select> 
+                    <?php if(isset($connection)) { populate_categories($connection); }?>
                 </div>
                 <div class="col-4" style="float:right;"><input type="submit" class="button" value="Add" ></div>
             </form>
@@ -28,5 +22,3 @@
         </div>
     </div>
 </div>
-
-<div class="col-2" style="float:right;"><input type="button" class="button" value="Add Item" onclick="document.getElementById('budgetManager').style.display='block'"></div>
