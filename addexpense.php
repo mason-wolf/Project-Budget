@@ -19,13 +19,13 @@
 <div class="col-12">
     <div class="col-7 center shadow"  style="padding:0px;">
         <div class="col-12">
-                <div class="col-12"><a href="dashboard.php">Back</a></div>
+                <div class="col-12"><a href="Dashboard.php">Back</a></div>
                 <div class="col-12"><h2>Add Expense</h2></div>
                 <div class="col-4">Current Balance:</div>
                 <div class="col-5">
                     <?php if(isset($user)) { display_balance($connection, $user); }?>
                 </div>
-                    <form method="post" action="addexpense.php">
+                    <form method="post" action="AddExpense.php">
                         <input type="hidden" name="addexpense">
                         <div class="col-4" >Amount:</div>
                         <div class="col-5">    

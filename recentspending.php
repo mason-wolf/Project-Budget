@@ -51,5 +51,5 @@
                   ?>
           </tr>
         </table>
-        <div class="col-3" style="float:right;padding:0px;margin-top:10px;"><input type="button" href="addexpense.php" onclick="location.href='addexpense.php'" value="Add Expense" class="button"></div>
+        <div class="col-3" style="float:right;padding:0px;margin-top:10px;"><input type="button" href="AddExpense.php" onclick="location.href='AddExpense.php'" value="Add Expense" class="button"></div>
     </div>

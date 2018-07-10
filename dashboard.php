@@ -9,13 +9,13 @@
   <div class="col-7 center shadow">
 
     <!-- recent spending -->
-    <?php include('recentspending.php'); ?>
+    <?php include('RecentSpending.php'); ?>
 
     <!-- projected spending -->
-    <?php include('projectedspending.php');?>
+    <?php include('ProjectedSpending.php');?>
 
     <!-- transactions -->
-    <?php include('transactions.php');?>
+    <?php include('Transactions.php');?>
 
     
   </div>

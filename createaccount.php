@@ -21,7 +21,7 @@
         email, password) VALUES ('" . ucfirst($firstname) ."', '" . ucfirst($lastname) . "', '" . $email . "', '" . $password . "')");
         session_start();
         $_SESSION['user'] = $email;
-        header('location:newprofile.php');
+        header('location:NewProfile.php');
       }
     }
     else {

@@ -36,7 +36,7 @@
         echo $accountconflict;
       }
     ?>
-        <div class="col-12"><a href="createaccount.php">Create Account</a></div>
+        <div class="col-12"><a href="CreateAccount.php">Create Account</a></div>
     <div class="col-4 center" style="float:right;"><input type="submit" class="button" value="Sign in"></div>
     
   </form>

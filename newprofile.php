@@ -11,6 +11,8 @@
     $userquery = mysqli_fetch_assoc(mysqli_query($connection, "select * from users where email='" . $user . "'"));
     $username = $userquery['firstname'];
     $dateCreated = date("F j, Y");
+    $defaultBudgetStartDate = date("Y-m") . "-01"; 
+    $defaultBudgetEndDate = date("Y-m-t", strtotime($defaultBudgetStartDate));
 
       if(isset($_POST['newprofile'])) {
         $accountname = $_POST['accountname'];
@@ -20,8 +22,8 @@
         if (!is_numeric($income))  {
           $invalidIncome = "<span style='color:red;'>Please enter a valid income.</span>";
         }
-        $newAccountQuery = mysqli_query($connection, "insert into accounts (name, datecreated, owner, balance, type, status) values ('" . ucfirst($accountname) . "',
-        '" . $dateCreated . "', '" . $userquery['email'] . "', '" . $income . "', '" . $type . "','primary')");
+        $newAccountQuery = mysqli_query($connection, "insert into accounts (name, datecreated, owner, balance, type, status, budgetStartDate, budgetEndDate) values ('" . ucfirst($accountname) . "',
+        '" . $dateCreated . "', '" . $userquery['email'] . "', '" . $income . "', '" . $type . "','primary', '" . $defaultBudgetStartDate . "','" . $defaultBudgetEndDate . "')");
 
         $newTransactionQuery = mysqli_query($connection, "insert into transactions (owner, income, date, account) values ('" . $userquery['email'] . "',
         '" . $income . "', '" . $dateCreated . "', '" . $accountname . "'");

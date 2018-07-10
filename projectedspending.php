@@ -26,5 +26,5 @@ $user = validate_session();
                     echo "</table>";
                 }
           ?>
-         <div class="col-3" style="float:right;padding:0px;margin-top:10px;"><input type="button" onclick="location.href='createbudget.php'" value="Manage Budget" class="button"></div>
+         <div class="col-3" style="float:right;padding:0px;margin-top:10px;"><input type="button" onclick="location.href='BudgetManager.php'" value="Manage Budget" class="button"></div>
     </div>
