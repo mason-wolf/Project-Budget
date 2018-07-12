@@ -5,8 +5,8 @@
     $user = validate_session();
  ?>
 
-<div class="col-12">
-  <div class="col-7 center shadow">
+<div class="col-12" style="padding:0px;">
+  <div class="col-7 center shadow" style="padding:1em;">
 
     <!-- recent spending -->
     <?php include('RecentSpending.php'); ?>

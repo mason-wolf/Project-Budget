@@ -8,7 +8,7 @@
         session_start();
         $category = $_POST['category'];
         $user = $_SESSION['user'];
-        $newcategory = mysqli_query($connection, "insert into categories (title, owner) VALUES ('" . $category . "','" . $user . "')");
+        $newcategory = mysqli_query($connection, "insert into usercategories (title, owner) VALUES ('" . $category . "','" . $user . "')");
         if(isset($_GET['redirect'])) {
             $redirect = $_GET['redirect'];
             header('location:' . $redirect);
@@ -19,7 +19,7 @@
         session_start();
         $category = $_POST['category'];
         $user = $_SESSION['user'];
-        $removeCategory = mysqli_query($connection, "delete from categories where title='" . $category . "'");
+        $removeCategory = mysqli_query($connection, "delete from usercategories where title='" . $category . "' and owner='" . $user . "'");
         if(isset($_GET['redirect'])) {
             $redirect = $_GET['redirect'];
             header('location:' . $redirect);
@@ -43,7 +43,7 @@
             <form method="post" action="CategoryManager.php?redirect=<?php echo $_SERVER['REQUEST_URI'];?>">
                 <div class="col-12">
                 <input type="hidden" name="removeCategory">
-                    <?php populate_categories($connection); ?>
+                    <?php populate_categories($connection, $user); ?>
                 </div>
                 <div class="col-4" style="float:right;"><input type="submit" class="button" value="Remove" ></div>
             </form>

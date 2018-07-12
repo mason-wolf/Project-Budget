@@ -13,7 +13,7 @@
                 <input type="hidden" name="newBudgetItem">
                 <div class="col-12"><span class="currency"><input  type="text" class="field"  placeholder="0.00"  style="padding-left:17px;" name="amount"></span></div>
                 <div class="col-12">
-                    <?php if(isset($connection)) { populate_categories($connection); }?>
+                    <?php if(isset($connection)) { populate_categories($connection, $user); }?>
                 </div>
                 <div class="col-4" style="float:right;"><input type="submit" class="button" value="Add" ></div>
             </form>

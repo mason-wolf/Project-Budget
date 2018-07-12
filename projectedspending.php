@@ -19,12 +19,14 @@ $user = validate_session();
                     while($budgetItem = mysqli_fetch_assoc($budgetItemQuery)) {
                         echo "<tr><td>" . $budgetItem['category'] . "</td>";
                         $projectedExpenseQuery = mysqli_query($connection, "select sum(amount) as total from budgets where owner='" . $user . "' and category='" . $budgetItem['category'] . "'");
-                        while($projectedExpense = mysqli_fetch_assoc($projectedExpenseQuery)) {
+                        while($projectedExpense = mysqli_fetch_assoc($projectedExpenseQuery) ) {
                             echo "<td>$ " . number_format($projectedExpense['total']) . "</tr></td>"; 
                         }
                     }
                     echo "</table>";
                 }
           ?>
-         <div class="col-3" style="float:right;padding:0px;margin-top:10px;"><input type="button" onclick="location.href='BudgetManager.php'" value="Manage Budget" class="button"></div>
+         <div class="col-4" style="float:right;padding:0px;margin-top:10px;">
+            <input type="button" onclick="location.href='BudgetManager.php'" value="Manage Budget" class="button">
+         </div>
     </div>

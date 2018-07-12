@@ -19,11 +19,10 @@
           </tr>
               <?php
       
-              // retrieve all categories
-              $categoryQuery = mysqli_query($connection, "select * from categories");
-              // retrieve all transactions that match each category by owner
-              while ($category = mysqli_fetch_assoc($categoryQuery)) {
-                $transactionQuery = mysqli_query($connection, "select * from transactions where owner='" . $user . "' and category='" . $category['title'] . "' group by category"); 
+              $categories = get_categories($connection, $user);
+
+              foreach ($categories as $category) {
+                $transactionQuery = mysqli_query($connection, "select * from transactions where owner='" . $user . "' and category='" . $category . "' group by category"); 
                 while ($transactionCategory = mysqli_fetch_assoc($transactionQuery)) { 
                   echo "<tr><td>" . $transactionCategory['category'] . "</td>"; 
                   // retrieve sum of expenses for each category
@@ -34,6 +33,7 @@
                 } 
               }
             
+
                 ?>
           <tr>
 
@@ -51,5 +51,5 @@
                   ?>
           </tr>
         </table>
-        <div class="col-3" style="float:right;padding:0px;margin-top:10px;"><input type="button" href="AddExpense.php" onclick="location.href='AddExpense.php'" value="Add Expense" class="button"></div>
+        <div class="col-4" style="float:right;padding:0px;margin-top:10px;"><input type="button" href="AddExpense.php" onclick="location.href='AddExpense.php'" value="Add Expense" class="button"></div>
     </div>

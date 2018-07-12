@@ -16,13 +16,34 @@ function display_balance($connection, $user) {
     echo "$ " . number_format($balance['balance']);
 }
 
-function populate_categories($connection) {
+function get_categories($connection, $user) {
+
+              $categories = array();
+
+              // retrieve all user-defined categories
+              $userCategoryQuery = mysqli_query($connection, "select * from usercategories where owner='" . $user . "'");
+              while ($userCategory = mysqli_fetch_assoc($userCategoryQuery)) {
+                array_push($categories, $userCategory['title']);
+              }
+
+              // retrieve all default categories 
+              $defaultCategoryQuery = mysqli_query($connection, "select * from defaultcategories");
+              while ($defaultCategory = mysqli_fetch_assoc($defaultCategoryQuery)) {
+                array_push($categories, $defaultCategory['title']);
+              }
+
+              return $categories;
+}
+
+function populate_categories($connection, $user) {
     echo "<select class='field' name='category'>";
-    $categoryQuery = mysqli_query($connection, 'select * from categories ORDER BY title');
-    while ($category = mysqli_fetch_assoc($categoryQuery)) {
-        echo "<option value='" . $category['title'] . "'>" . $category['title'] . "</option>";
-    }
+    $categories = get_categories($connection, $user);
+    sort($categories);
+        foreach ($categories as $category) {
+            echo "<option value='" . $category . "'>" . $category . "</option>"; 
+        }
     echo "</select>";
 }
+
 
 ?>

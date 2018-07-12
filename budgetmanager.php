@@ -27,10 +27,10 @@
 
 ?>
                         
-<div class="col-12">
+<div class="col-12" style="padding:0px">
     <div class="col-7 center shadow"  style="padding:0px;">
-        <div class="col-12" style="padding:0px;">
-            <div class="col-12"><a href="Dashboard.php">Back</a></div>
+        <div class="col-12" style="padding:1em;">
+            <div class="col-12"><a href="Dashboard.php">Dashboard</a> > <a href="BudgetManager.php">Manage Budget</a></div>
             <div class="col-12">
                 <h2>Manage Budget</h2></br>
                 <h3 style="float:right;">
@@ -79,7 +79,8 @@
                         echo "<tr><td>" . $budgetItem['category'] . "</td>";
                         $projectedExpenseQuery = mysqli_query($connection, "select sum(amount) as total from budgets where owner='" . $user . "' and category='" . $budgetItem['category'] . "'");
                         while($projectedExpense = mysqli_fetch_assoc($projectedExpenseQuery)) {
-                            echo "<td>$ " . $projectedExpense['total'] . "</tr></td>"; 
+
+                            echo "<td>$ " . number_format((float)$projectedExpense['total'], 2, '.', '') . "<a href='RemoveBudgetItem.php?category=" . $budgetItem['id'] . "' style='float:right;'>Remove</a></tr></td>"; 
                         }
                     }
                     $balanceQuery = mysqli_query($connection, "select balance from accounts where owner='" . $user . "' and status='primary'");
@@ -90,18 +91,18 @@
                     $projectedSpendingResult = mysqli_fetch_assoc($projectedSpendingQuery);
                     $projectedSpending = $projectedSpendingResult['total'];
                     $projectedSavings = $balance - $projectedSpending;
-  
+        
                     echo "<td style='border-top:0px;'><b>Remaining Balance</b></td>";
                     echo "<td style='border-top:0px;'><b>$ " . $balance . "</b></td>";
                     echo "<tr><td style='border-top:0px;'><b>Projected Savings</b></td>";
-                    echo "<td style='border-top:0px;'><b>$ " . $projectedSavings  . "</b></td></tr>";
+                    echo "<td style='border-top:0px;'><b>$ " . number_format((float)$projectedSavings, 2, '.', '')  . "</b></td></tr>";
+                    echo "<td style='border-top:0px;'><b>Total Budgeted</b></td>";
+                    echo "<td style='border-top:0px;'><b>$ " . number_format((float)$projectedSpendingResult['total'], 2, '.', '') . "</b></td></tr>";
                 }
                 ?>  </table>
            <?php include('AddBudgetItem.php'); ?>
            <?php include('Timeframes.php'); ?>
             <div class="col-4" style="float:right;padding:0px;margin-top:10px;"><input type="button" class="button" value="Add Item" onclick="document.getElementById('AddBudgetItem').style.display='block'"></div>
-
-
         </div>
     </div>
 </div>

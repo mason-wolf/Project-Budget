@@ -36,5 +36,5 @@
                 }
           
           ?>
-                  <div class="col-3" style="float:right;padding:0px;margin-top:10px;"><input type="button" href="addexpense.php" onclick="location.href='addincome.php'" value="Add Income" class="button"></div>
+                  <div class="col-4" style="float:right;padding:0px;margin-top:10px;"><input type="button" href="addexpense.php" onclick="location.href='addincome.php'" value="Add Income" class="button"></div>
     </div>
