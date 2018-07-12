@@ -10,7 +10,7 @@
     header('location:index.php');
   }
 ?>
-    <div class="col-12" style="padding:0px;margin-bottom:10px;">
+    <div class="col-12" style="padding:0px;margin-top:25px;">
       <h2 style="margin-bottom:15px;">Recent Spending</h2>
         <table>
           <tr>

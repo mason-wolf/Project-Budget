@@ -4,7 +4,7 @@ include_once 'connection.php';
 $user = validate_session();
 ?>
 <div class="col-12" style="padding: 0px;">
-            <h2 style="margin-bottom:15px;margin-top:15px;">Projected Spending</h2>
+            <h2 style="margin-bottom:15px;">Projected Spending</h2>
                 <?php
                     $budgetQuery = mysqli_query($connection, "select * from budgets where owner='" . $user . "'");
                     $budgetCount = mysqli_fetch_assoc($budgetQuery);

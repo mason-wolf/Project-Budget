@@ -35,7 +35,7 @@
                         </div>
                         <div class="col-6">Category:</br><a href="#" onclick="document.getElementById('categoryManager').style.display='block'" style="font-size:13px;">Manage Categories</a></div>
                         <div class="col-6"> 
-                            <?php populate_categories($connection); ?>
+                            <?php populate_categories($connection, $user); ?>
                         </div>
                         <div class="col-6" style="margin-top:15px;">Date:</div>
                         <div class="col-6"><input type="date" class="field" name="date" id="date" value="<?php echo $today; ?>"></div>

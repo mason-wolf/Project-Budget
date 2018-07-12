@@ -103,6 +103,7 @@
            <?php include('AddBudgetItem.php'); ?>
            <?php include('Timeframes.php'); ?>
             <div class="col-4" style="float:right;padding:0px;margin-top:10px;"><input type="button" class="button" value="Add Item" onclick="document.getElementById('AddBudgetItem').style.display='block'"></div>
+
         </div>
     </div>
 </div>

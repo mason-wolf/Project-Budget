@@ -3,7 +3,7 @@
   include_once 'connection.php';
   $user = validate_session();
 ?> 
-    <div class="col-12" style="padding: 0px;margin-top:15px;">
+    <div class="col-12" style="padding: 0px;margin-top:25px;">
             <h2 style="margin-bottom:15px;">Transactions</h2>
 
                 <?php
