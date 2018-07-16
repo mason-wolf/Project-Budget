@@ -36,10 +36,5 @@
                 }
           
           ?>
-<<<<<<< HEAD:transactions.php
                   <div class="col-4" style="float:right;padding:0px;margin-top:25px;"><input type="button" onclick="location.href='addincome.php'" value="Add Income" class="button"></div>
     </div>
-=======
-                  <div class="col-4" style="float:right;padding:0px;margin-top:10px;"><input type="button" href="addexpense.php" onclick="location.href='addincome.php'" value="Add Income" class="button"></div>
-    </div>
->>>>>>> 31a95bc65cb4bc47872e0c4a42f397d75f608e96:Transactions.php

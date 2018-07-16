@@ -1,6 +1,6 @@
 <?php 
-include_once 'functions.php';
-include_once 'connection.php';
+include_once 'Functions.php';
+include_once 'Connection.php';
 $user = validate_session();
 ?>
 <div class="col-12" style="padding: 0px;margin-top:50px;">
