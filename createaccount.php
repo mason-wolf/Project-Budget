@@ -9,24 +9,29 @@
     $email = $_POST['email'];
     $password = $_POST['password'];
 
-    if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
-
-      $accountquery = mysqli_query($connection, "select * from users where email='" . $email . "'");
-
-      if (mysqli_num_rows($accountquery) >= 1) {
-        $accountconflict = "<div class='col-12' style='color:red;text-align:center;'>Account already exists.</div>";
-      }
-      else {
-        $newaccount = mysqli_query($connection, "insert into users (firstname, lastname,
-        email, password) VALUES ('" . ucfirst($firstname) ."', '" . ucfirst($lastname) . "', '" . $email . "', '" . $password . "')");
-        session_start();
-        $_SESSION['user'] = $email;
-        header('location:NewProfile.php');
-      }
+    if (empty($firstname) || empty($lastname) || empty($email) || empty($password)) {
+      $accountconflict = "<div class='col-12' style='color:red;text-align:center;'>Please enter the required information.</div>";
     }
     else {
-        $accountconflict = "<div class='col-12' style='color:red;text-align:center;'>Please enter a valid email.</div>";
-    }
+        if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
+
+          $accountquery = mysqli_query($connection, "select * from users where email='" . $email . "'");
+
+          if (mysqli_num_rows($accountquery) >= 1) {
+            $accountconflict = "<div class='col-12' style='color:red;text-align:center;'>Account already exists.</div>";
+          }
+          else {
+            $newaccount = mysqli_query($connection, "insert into users (firstname, lastname,
+            email, password) VALUES ('" . ucfirst($firstname) ."', '" . ucfirst($lastname) . "', '" . $email . "', '" . $password . "')");
+            session_start();
+            $_SESSION['user'] = $email;
+            header('location:NewProfile.php');
+          }
+        }
+        else {
+            $accountconflict = "<div class='col-12' style='color:red;text-align:center;'>Please enter a valid email.</div>";
+        }
+      }
   }
 ?>
 

@@ -29,8 +29,8 @@
                         
 <div class="col-12" style="padding:0px">
     <div class="col-7 center shadow"  style="padding:0px;">
-        <div class="col-12" style="padding:1em;">
-            <div class="col-12"><a href="Dashboard.php">Dashboard</a> > <a href="BudgetManager.php">Manage Budget</a></div>
+        <div class="col-12" style="padding:0em;">
+            <div class="col-12"><a href="Dashboard.php">Dashboard</a> <span style="margin-left:15px;margin-right:15px;">></span> <a href="BudgetManager.php">Manage Budget</a></div>
             <div class="col-12">
                 <h2>Manage Budget</h2></br>
                 <h3 style="float:right;">
@@ -49,8 +49,7 @@
                     ?> 
                 <table>
                     <tr>
-                        <th style="border-bottom:0px;">Categories <?php include('categorymanager.php');?> 
-                        <sub><a href="#" onclick="document.getElementById('categoryManager').style.display='block'">Edit</a></sub></th>
+                        <th style="border-bottom:0px;">Categories <?php include('categorymanager.php');?> </th>
                         <th style="border-bottom:0px;">Projected Expenses</th>
                     </tr> 
                 </table>
@@ -68,8 +67,7 @@
 
                 <table>
                     <tr>
-                        <th style="border-bottom:0px;">Categories <?php include('categorymanager.php');?> 
-                        <sub><a href="#" onclick="document.getElementById('categoryManager').style.display='block'"> Edit</a></sub></th>
+                        <th style="border-bottom:0px;">Categories <?php include('categorymanager.php');?> </th>
                         <th style="border-bottom:0px;">Projected Expense</th>
                     </tr> 
                 <?php
@@ -100,9 +98,24 @@
                     echo "<td style='border-top:0px;'><b>$ " . number_format((float)$projectedSpendingResult['total'], 2, '.', '') . "</b></td></tr>";
                 }
                 ?>  </table>
-           <?php include('AddBudgetItem.php'); ?>
+ 
            <?php include('Timeframes.php'); ?>
-            <div class="col-4" style="float:right;padding:0px;margin-top:10px;"><input type="button" class="button" value="Add Item" onclick="document.getElementById('AddBudgetItem').style.display='block'"></div>
+           <div class="col-6" style="padding:0px;margin-top:50px;margin-bottom:15px;">
+            <h2>Add Projected Expense</h2>
+                <div class="col-4" style="margin-top:25px;margin-bottom:15px;padding:0px;">Amount:</div>
+
+                <form method="post" action="BudgetManager.php">
+                    <input type="hidden" name="newBudgetItem">
+                    <div class="col-12" style="padding:0px;"><span class="currency"><input  type="text" class="field"  placeholder="0.00"  style="padding-left:17px;" name="amount"></span></div>
+                    <div class="col-12" style="padding:0px;margin-top:25px;">
+                        <?php if(isset($connection)) { populate_categories($connection, $user); }?>
+                    </div>
+                    <div class="col-12" style="padding:0px;">
+                    <sub><a href="#" onclick="document.getElementById('categoryManager').style.display='block'" style="float:right;margin-top:15px;">Manage Categories</a></sub>
+                    </div>
+                    <div class="col-4" style="float:right;padding:0px;margin-top:15px;"><input type="submit" class="button" value="Add" ></div>
+                </form>
+            </div>
 
         </div>
     </div>

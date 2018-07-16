@@ -26,7 +26,7 @@
                 while ($transactionCategory = mysqli_fetch_assoc($transactionQuery)) { 
                   echo "<tr><td>" . $transactionCategory['category'] . "</td>"; 
                   // retrieve sum of expenses for each category
-                  $expenseQuery = mysqli_query($connection, "select sum(expense) as total from transactions where owner='" . $user . "' and category='" . $category['title'] ."'");
+                  $expenseQuery = mysqli_query($connection, "select sum(expense) as total from transactions where owner='" . $user . "' and category='" . $transactionCategory['category'] ."'");
                     while ($expense = mysqli_fetch_assoc($expenseQuery)) {
                       echo "<td>$ " . number_format($expense['total']) . "</td></tr>";
                     }
@@ -51,5 +51,5 @@
                   ?>
           </tr>
         </table>
-        <div class="col-4" style="float:right;padding:0px;margin-top:10px;"><input type="button" href="AddExpense.php" onclick="location.href='AddExpense.php'" value="Add Expense" class="button"></div>
+        <div class="col-4" style="float:right;padding:0px;margin-top:25px;"><input type="button" href="AddExpense.php" onclick="location.href='AddExpense.php'" value="Add Expense" class="button"></div>
     </div>

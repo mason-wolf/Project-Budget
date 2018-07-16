@@ -3,7 +3,7 @@
   include_once 'connection.php';
   $user = validate_session();
 ?> 
-    <div class="col-12" style="padding: 0px;margin-top:25px;">
+    <div class="col-12" style="padding: 0px;margin-top:50px;">
             <h2 style="margin-bottom:15px;">Transactions</h2>
 
                 <?php
@@ -36,5 +36,5 @@
                 }
           
           ?>
-                  <div class="col-4" style="float:right;padding:0px;margin-top:10px;"><input type="button" href="addexpense.php" onclick="location.href='addincome.php'" value="Add Income" class="button"></div>
+                  <div class="col-4" style="float:right;padding:0px;margin-top:25px;"><input type="button" onclick="location.href='addincome.php'" value="Add Income" class="button"></div>
     </div>
