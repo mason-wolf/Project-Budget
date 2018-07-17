@@ -69,18 +69,18 @@ function show_budget_progress($spendingPercentage, $projectedSpending) {
     if ($spendingPercentage < 100) {
         $divRadius = "0px";
     }
-    echo "<div class='col-8 projectedSpending'>
-          <div style='
-          border-radius:10px;
-          border-top-left-radius: 50px 100px;
-          border-bottom-left-radius: 50px 100px;
-          border-top-right-radius: " . $divRadius . ";
-          border-bottom-right-radius: " .$divRadius . ";
-          background-color:" . $divBackgroundColor . ";
-          width:" . $divWidth . "%;
-          height:100%;'>
-          </div>
-          <span style='float:right;padding:.4em;margin-top:-50px;color:" . $divFontColor . ";'>$" . $projectedSpending . "</span>
+    echo "<div class='col-12 projectedSpendingProgress'>
+    <div style='
+    border-radius:10px;
+    border-top-left-radius: 50px 100px;
+    border-bottom-left-radius: 50px 100px; 
+    border-top-right-radius: " . $divRadius . ";
+    border-bottom-right-radius: " .$divRadius . ";
+    background-color:" . $divBackgroundColor . ";
+    width:" . $divWidth . "%;
+    height:100%;'>
+    </div>
+          <span style='float:right;padding:.4em;margin-top:-33px;color:" . $divFontColor . ";'>$" . $projectedSpending . "</span>
           </div>"; 
 }
 ?>

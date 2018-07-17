@@ -29,7 +29,7 @@
                         
 <div class="col-12" style="padding:0px">
     <div class="col-7 center shadow"  style="padding:0px;">
-        <div class="col-12" style="padding:0em;">
+        <div class="col-12" style="padding:1em;">
             <div class="col-12"><a href="Dashboard.php">Dashboard</a> <span style="margin-left:15px;margin-right:15px;">></span> <a href="BudgetManager.php">Manage Budget</a></div>
             <div class="col-12">
                 <h2>Manage Budget</h2></br>
