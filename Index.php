@@ -20,7 +20,7 @@
       }
     }
 ?>
-
+        
 <div class="col-12">
   <div class="col-5 center">
     <form method="post" action="index.php">

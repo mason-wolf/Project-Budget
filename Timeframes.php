@@ -12,8 +12,7 @@
                         <input type="hidden" name="newTimeframe">
                         <div class="col-12">Start Date: <input type="date" class="field" name="startDate" style="margin-top:10px;" value="<?php  echo $timeframeResult['budgetStartDate']; ?>"></div>
                         <div class="col-12">End Date: <input type="date" class="field" name="endDate"style="margin-top:10px;" value="<?php  echo $timeframeResult['budgetEndDate']; ?>"></div>
-                        <div class="col-5" style="padding:0px;margin-top:47px;"><input type="submit" value="Save" class="button"></div>
-                        <div class="col-6" style="padding:0px;margin-top:47px;float:right;"><input type="button" value="Archive" class="button"></div>
+                        <div class="col-5" style="padding:0px;margin-top:47px;float:right;"><input type="submit" value="Save" class="button"></div>
                     </form>
 
         </div>

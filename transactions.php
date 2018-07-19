@@ -29,8 +29,8 @@
                     $transactionQuery = mysqli_query($connection, "select * from transactions where owner='" . $user . "' order by id desc limit 15");
                     while($transaction = mysqli_fetch_assoc($transactionQuery)) {
                         echo "<tr><td>" . $transaction['category'] . "</td>";
-                        echo "<td>" . $transaction['date'] . "</td>";
-                        echo "<td>$ " . $transaction['expense'] . "</td>";
+                        echo "<td>" .  date("F d, Y", strtotime( $transaction['date'])) . "</td>";
+                        echo "<td class='money'>$ " . $transaction['expense'] . "</td>";
                     }
                     echo "</table>";
                 }

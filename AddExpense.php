@@ -23,7 +23,6 @@
 
 <div class="col-12" style="padding:0px">
     <div class="col-7 center shadow"  style="padding:1em;">
-        <div class="col-12" style="padding:0px;">
                 <div class="col-12"><a href="Dashboard.php">Dashboard</a> <span style="margin-left:15px;margin-right:15px;">></span> <a href="AddExpense.php">Add Expense</a></div>
                 <div class="col-12"><h2>Add Expense</h2></div>
                 <div class="col-6" style="white-space:nowrap;">Current Balance:</div>
@@ -49,7 +48,6 @@
                      </form>
                 <?php include('categorymanager.php'); ?>
         </div>
-    </div>
 </div>
         
                        
