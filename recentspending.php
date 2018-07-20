@@ -10,7 +10,7 @@
     header('location:index.php');
   }
 ?>
-    <div class="col-12" style="padding:0px;margin-top:25px;">
+    <div class="col-12" style="padding:0px;margin-top:50px;">
       <h2 style="margin-bottom:15px;">Recent Spending</h2>
         <table>
           <tr>
@@ -39,16 +39,10 @@
 
           <?php  
             if ($accountActivity == 0) {
-              echo "</table><div class='col-12' style='border:1px solid #ddd;text-align:center;border-bottom:0px;border-top:0px;' >No account activity.</div><table>";
+              echo "</table><div class='col-12' style='border:1px solid #ddd;text-align:center;border-top:0px;' >No account activity.</div><table>";
             }         
           
           ?>
-            <td><b>Remaining Funds:</b></td>
-                  <?php // display remaining balance
-                        $balanceQuery = mysqli_query($connection, "select balance from accounts where owner='" . $user . "' and status='primary'");
-                        $balance = mysqli_fetch_assoc($balanceQuery);
-                        echo "<td class='money'><b> $ " . number_format((float)$balance['balance'], 2 , '.', '') . "</b></td>";
-                  ?>
           </tr>
         </table>
         <div class="col-4" style="float:right;padding:0px;margin-top:25px;">

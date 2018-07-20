@@ -17,9 +17,9 @@
   }
  ?>
 
-<div class="col-12">
+<div class="col-12" style="padding:0px;">
     <div class="col-7 center shadow"  style="padding:0px;">
-        <div class="col-11" style="padding:30px;border:1px solid #ddd;">
+        <div class="col-11" style="padding:1em;">
             <div class="col-12"><a href="dashboard.php">Back</a></div>
             <div class="col-12"><h2>Add Income</h2></div>
             <form method="post" action="addincome.php">

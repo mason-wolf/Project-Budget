@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="main.css">
     <link href="css/main.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Barlow" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Heebo:100" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css?family=Heebo:300" rel="stylesheet"> 
     <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
     <script src="main.js"></script>
     <?php
