@@ -32,7 +32,7 @@
         <div class="col-12" style="background-color:#fff;padding: 30px;">
            <span onclick="document.getElementById('categoryManager').style.display='none'" style="float:right;"><i class="far fa-times-circle" style="font-size:25px;"></i></span>
            <h2>Manage Categories</h2>
-           <div class="col-4" style="margin-top:15px;">Category Title:</div>
+           <div class="col-4" style="margin-top:15px;font-weight:100;">Category Title:</div>
 
             <form method="post" action="CategoryManager.php?redirect=<?php echo $_SERVER['REQUEST_URI'];?>">
                 <input type="hidden" name="addCategory">

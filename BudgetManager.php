@@ -43,7 +43,7 @@
             <div class="col-12">
                 <h2>Manage Budget</h2></br>
                 <h3 style="float:right;">
-                    <a href="#" onclick="document.getElementById('Timeframes').style.display='block'">
+                    <a href="#" onclick="document.getElementById('Timeframes').style.display='block'" style="font-weight:100;">
                     <?php 
                             $startDate = date("F j, Y", strtotime($timeframeResult['budgetStartDate']));
                             $endDate = date("F j, Y", strtotime($timeframeResult['budgetEndDate']));
@@ -121,7 +121,7 @@
                     <div class="col-12" style="padding:0px;">
                     <sub><a href="#" onclick="document.getElementById('categoryManager').style.display='block'" style="float:right;margin-top:15px;">Manage Categories</a></sub>
                     </div>
-                    <div class="col-5" style="float:left;padding:0px;margin-top:15px;"><input type="button" onclick="document.getElementById('ArchiveBudget').style.display='block'" class="button" value="Archive" ></div>
+                   
                     <div class="col-5" style="float:right;padding:0px;margin-top:15px;"><input type="submit" class="button" value="Add" ></div>
                 </form>
             </div>
@@ -131,7 +131,7 @@
                 <?php
                     $budgetHistoryQuery = mysqli_query($connection, "select distinct startDate, endDate from budgets where owner='" . $user . "' and archived='true'");
                     if(mysqli_num_rows($budgetHistoryQuery) == 0) {
-                        echo "<div style='border:1px solid #ddd;padding:1em;text-align:center;margin-top:50px;'>Budget archive empty.</div>";
+                        echo "<div style='border:1px solid #ddd;padding:1em;text-align:center;margin-top:25px;height:190px;'>Budget archive empty.</div>";
                     }
                     else {
                         echo "<div class='col-12' style='border:1px solid #ddd;padding:1em;text-align:center;margin-top:50px;'>";
@@ -141,6 +141,7 @@
                         echo "</div>";
                     }
                 ?>
+                 <div class="col-5" style="float:right;padding:0px;margin-top:15px;"><input type="button" onclick="document.getElementById('ArchiveBudget').style.display='block'" class="button" value="Archive" ></div>
             </div>
 
 

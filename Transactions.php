@@ -4,7 +4,7 @@
   $user = validate_session();
 ?> 
     <div class="col-12" style="padding: 0px;margin-top:50px;">
-            <h2 style="margin-bottom:15px;">Transactions</h2>
+            <h2 style="margin-bottom:15px;">Transactions<i class="fas fa-credit-card" style="color:#1c4418;margin-left:20px;"></i></h2>
 
                 <?php
                     $budgetQuery = mysqli_query($connection, "select * from transactions where owner='" . $user . "'");

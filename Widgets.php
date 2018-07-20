@@ -6,7 +6,11 @@
             $balanceQuery = mysqli_query($connection, "select balance from accounts where owner='" . $user . "' and status='primary'");
             $balanceResult = mysqli_fetch_assoc($balanceQuery);
             echo "<div class='money' style='margin-top:25px;'><h1> $ " . number_format((float)$balanceResult['balance'], 2 , '.', '') . "</h1></div>";
-            echo "<div class='col-12' style='text-align:right;padding:0px;'><a href='AddIncome.php' style='color:#fff;font-size:16px;font-weight:100;'>Add Income</a></div>";
+            echo "<div class='col-12' style='text-align:right;padding:0px;'>";
+        ?>
+            <a href='#' onclick="document.getElementById('AddIncome').style.display='block'" style="color:#fff;font-size:16px;font-weight:100;">Add Income</a>
+        <?php
+            echo "</div>";
         ?>
     </div>
 </div>
@@ -22,7 +26,7 @@
         $projectedSpending = $projectedSpendingResult['total'];
         $projectedSavings = $balance - $projectedSpending;
         echo "<div class='money' style='margin-top:25px;'><h1> $ " . number_format((float)$projectedSavings, 2, '.', '') . "</h1></div>";
-        echo "<div class='col-12' style='text-align:right;padding:0px;'><a href='#' style='color:#fff;font-size:16px;font-weight:100;'>View Expenses</a></div>";
+        echo "<div class='col-12' style='text-align:right;padding:0px;'><a href='ViewRecentSpending.php' style='color:#fff;font-size:16px;font-weight:100;'>View Expenses</a></div>";
         ?>
     </div>
 </div>
@@ -33,7 +37,7 @@
         <?php
         // display total budget
             echo "<div class='money' style='margin-top:25px;'><h1> $ " . number_format((float)$projectedSpendingResult['total'], 2, '.', '') . "</h1></div>";
-            echo "<div class='col-12' style='text-align:right;padding:0px;'><a href='#' style='color:#fff;font-size:16px;font-weight:100;'>Manage Budget</a></div>";
+            echo "<div class='col-12' style='text-align:right;padding:0px;'><a href='BudgetManager.php' style='color:#fff;font-size:16px;font-weight:100;'>Manage Budget</a></div>";
         ?>
     </div>
 </div>

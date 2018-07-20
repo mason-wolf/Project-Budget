@@ -11,7 +11,7 @@
   }
 ?>
     <div class="col-12" style="padding:0px;margin-top:50px;">
-      <h2 style="margin-bottom:15px;">Recent Spending</h2>
+      <h2 style="margin-bottom:15px;">Recent Spending <i class="fas fa-money-bill-alt" style="color:#1c4418;margin-left:10px;"></i></h2>
         <table>
           <tr>
             <th>Category</th>
@@ -19,7 +19,7 @@
           </tr>
               <?php
       
-              $categories = get_categories($connection, $user);
+              $categories = get_categories($connection, $user, 15);
 
               foreach ($categories as $category) {
                 $transactionQuery = mysqli_query($connection, "select * from transactions where owner='" . $user . "' and category='" . $category . "' and archived='false' group by category"); 
@@ -46,7 +46,7 @@
           </tr>
         </table>
         <div class="col-4" style="float:right;padding:0px;margin-top:25px;">
-          <a href="#" style="float:right;margin-bottom:25px;">View All</a>
+        <a href="ViewRecentSpending.php" style="float:right;margin-bottom:25px;">View All</a>
           <input type="button" href="AddExpense.php" onclick="location.href='AddExpense.php'" value="Add Expense" class="button">
         </div>
     </div>
